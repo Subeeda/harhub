@@ -1,0 +1,107 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+    .bg-custom-purple {
+        background-color: hsla(271, 76%, 53%, 0.527); /* You can adjust this hex code for the desired shade of purple */
+    }
+    /* Add new styles for the footer */
+    .footer {
+        background-color: #f8f9fa;
+        padding: 3rem 0;
+    }
+    .footer h5 {
+        color: #8a2be2;
+        margin-top: 3rem;
+    }
+    .footer-bottom {
+        background-color: #8a2be2;
+        color: white;
+        padding: 1rem 0;
+    }
+    #about {
+        padding: 100px;
+        color:black;
+        padding: 100px;
+    }
+    body{
+       background-color: #cfacf0;
+    }
+</style>
+<body>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-custom-purple">
+           <div class="container-fluid">
+            <img src="{% static 'images/Logo.png' %}" alt="">
+               <a class="navbar-brand" href="#"></a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                   aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home
+                            <i class="fa-solid fa-house"></i>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="{% url 'facility_list' %}">Facility
+                            <i class="fa-solid fa-bed"></i>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="{% url 'service_list' %}">Service
+                            <i class="fa-solid fa-spa"></i>
+                           </a>
+                       </li>
+                    
+                  
+               </div>
+           </div>
+       </nav>
+
+
+        {% block content %}
+        {% endblock %}
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>About Shaqodoon</h5>
+                    <p>Shaqodoon is dedicated to providing top-notch facilities and services to our customers.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none">Home</a></li>
+                        <li><a href="{% url 'facility_list' %}" class="text-decoration-none">Facilities</a></li>
+                        <li><a href="{% url 'service_list' %}" class="text-decoration-none">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <strong>Shaqodoon Headquarters</strong><br>
+                        123 Main Street<br>
+                        City, Country 12345<br>
+                        <i class="fa-solid fa-phone"></i> (123) 456-7890
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p class="mb-0">&copy; 2024 Shaqodoon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ... existing scripts ... -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+</body>
+</html>
