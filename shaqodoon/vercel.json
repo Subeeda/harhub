@@ -1,0 +1,16 @@
+{
+    "builds": [
+      {
+        "src": "shaqodoon/wsgi.py",
+        "use": "@vercel/python",
+        "config":{"maxLambdaSize":"15mb", "runtime":"python3.12.7"}
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "shaqodoon/wsgi.py"
+      }
+    ]
+  }
+  
